@@ -48,6 +48,7 @@ window.onload = function() {
 
     canvas = document.getElementById('gameCanvas');
     canvasContext = canvas.getContext('2d');
+    canvasContext.font = "40px Arial";
     
     var framesPerSecond = 30;
     setInterval(function() {
@@ -134,7 +135,7 @@ function moveEverything() {
 
 function drawTitle() {
     canvasContext.fillStyle = 'red';
-    canvasContext.fillText("CAN YOU BEAT COMPUTRON?", 150, 50);
+    canvasContext.fillText("CAN YOU BEAT COMPUTRON?", 110, 50);
 }
 
 function drawNet() {
@@ -145,16 +146,16 @@ function drawNet() {
     
 function drawEverything() {
     // next line blanks our the screen with black
-    colorRect(0,0,canvas.width,canvas.height,'grey');
+    colorRect(0,0,canvas.width,canvas.height,'black');
 
     if(showingWinScreen) {
         canvasContext.fillStyle = "white";
         if(player1Score >= WINNING_SCORE){
-            canvasContext.fillText("You beat Computron!", 350,200)
+            canvasContext.fillText("You beat Computron!", 220,200)
         } else if(player2Score >= WINNING_SCORE) {
-        canvasContext.fillText("Computron has beat you.", 350,200)
+        canvasContext.fillText("Computron has beat you.", 160,200)
     }
-    canvasContext.fillText("click to continue", 365,500)
+    canvasContext.fillText("click to continue", 250,500)
         return;
     }
     drawTitle();
